@@ -1,13 +1,13 @@
-# report-bug
+# report-bugs
 
 ## Installation
 ```bash
-npm install --save report-bug
+npm install --save report-bugs
 ```
-## Import the report-bug Library.
+## Import the report-bugs Library.
 
 ```js
-import BugReport from 'report-bug';
+import BugReport from 'report-bugs';
 ```
 ## Usage
 
