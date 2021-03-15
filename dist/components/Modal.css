@@ -1,0 +1,150 @@
+.react-modal-classname{
+  display: flex !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top : 0 !important;
+  left : 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+.modal_ok{
+  color : white !important;
+  background-color: #ff4861 !important;
+  border-radius: 5px !important;
+  border : none !important;
+  padding: 15px 30px !important;
+  margin-left : 10px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* margin-top :20px !important; */
+}
+.modal_cancel{
+  color : 646777 !important;
+  background-color: #e7e2e2 !important;
+  border-radius: 5px !important;
+  border : none !important;
+  padding: 15px 30px !important;
+  margin-left : 10px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.d-flex{
+  display : flex !important;
+}
+.align-items-center{
+  align-items: center !important;
+}
+.justify-content-center{
+  justify-content: center !important;
+}
+.react-modal-classname .backdrop{
+  position: absolute !important;
+  top:0 ;
+  left: 0 ;
+  right: 0 ;
+  bottom: 0 ;
+  background-color: rgba(0, 0, 0, 0.105) !important;
+  z-index: 5 !important;
+}
+.react-modal-classname .modal{
+  position: absolute !important;
+  top:20px !important;
+  height: 80% !important;
+  min-width: 600px !important;
+  width : 40% !important;
+  background-color: white !important;
+  z-index: 10 !important;
+  border-radius: 6px !important;
+  padding: 20px !important;
+  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.242) !important;
+}
+.modal__title{
+  font-size: 2em !important;
+  margin-top: -2px !important;
+}
+.rounded{
+  border-radius : 10px !important;
+}
+.form__form-group {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+.form__form-group-input-wrap {
+  width: 100% !important;
+}
+.text-left{
+  text-align: left ;
+  margin-bottom : 20px !important;
+}
+.form__form-group-label {
+  width: 80px !important;
+  max-height: 32px !important;
+  line-height: 18px !important;
+  margin: auto 0 !important;
+}
+.form__form-group-error {
+  top: -28px !important;
+}
+.react-modal-classname .modal .close-icon{
+  right:20px;
+  position: absolute ;
+  height: 20px !important;
+  width:20px !important;
+}
+.react-modal-classname .modal .close-icon div{
+  position: absolute !important;
+  height: 20px !important;
+  width: 2px !important;
+  left: 8px ;
+  border-radius: 1px !important;
+  background-color: rgb(91, 91, 91) !important;
+  transform: rotate(45deg) !important;
+}
+.bug-icon{
+  background-color: transparent !important;
+  border : none !important;
+  font-size: 30px !important;
+  padding : 10px !important;
+}
+.bug-icon :hover {
+  background-color: lightgray !important;
+}
+.react-modal-classname .modal .close-icon div:first-of-type{
+  transform: rotate(-45deg) !important;
+}
+/*From Up  */
+.modal-enter .backdrop {
+  opacity: 0.01 !important;
+}
+
+.modal-enter.modal-enter-active .backdrop{
+  opacity: 1 !important;
+  transition: opacity 500ms ease-in !important;
+}
+
+.modal-leave .backdrop{
+  opacity: 1 !important;
+}
+
+.modal-leave.modal-leave-active .backdrop{
+  opacity: 0.01 !important;
+  transition: opacity 300ms ease-in !important;
+}
+/*  */
+.modal-enter .modal {
+  transform: translateY(-500px) !important;
+}
+
+.modal-enter.modal-enter-active .modal{
+  transform: translateY(0px) !important;
+  transition: transform 500ms ease-in !important;
+}
+
+.modal-leave .modal{
+  opacity: 1 !important;
+}
+
+.modal-leave.modal-leave-active .modal{
+  transform: translateY(-500px) !important;
+  transition: transform 300ms ease-in !important;
+}
