@@ -50,7 +50,7 @@ import BugReport from 'report-bug';
  
 
 
- MIT © [anuj@i8labs.io](http://i8labs.io)
+ MIT © [developer@bondsindia.com](https://wwww.bondsindia.com)
  
 
  
