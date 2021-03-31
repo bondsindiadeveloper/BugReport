@@ -51,7 +51,8 @@ class BugReport extends Component {
       this.setState({ isLoading: true });
       const res = await axios.post(this.props.reportLink, body);
       console.log("bug report",res)
-      const insertedId = res.data.body
+      console.log("bug report id",res.data)
+      const insertedId = res.data
       this.setState({ isLoading: false, insertedId});
     } catch (e) {
       console.log(e);

@@ -27,8 +27,7 @@ export default (props) => {
     if (!doNotAutoResize) {
       textAreaRef.current.style.overflow = "hidden";
       textAreaRef.current.style.height = 0;
-      textAreaRef.current.style.height =
-        textAreaRef.current.scrollHeight + 8 + "px";
+      textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 8 + "px";
     }
   }, []);
   const fileId = uuid();
