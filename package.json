@@ -1,6 +1,6 @@
 {
   "name": "report-bugs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "BondsIndia Developer <developer@bondsindia.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bondsindiadeveloper/BugReport"
+    "url": "git+https://github.com/bondsindiadeveloper/BugReport.git"
   },
   "browserslist": [
     ">0.2%",
@@ -48,10 +48,11 @@
     "report"
   ],
   "contributors": [
-    {
-      "name": "BondsIndia Developer",
-      "email": "developer@bondsindia.com",
-      "url": "https://github.com/bondsindiadeveloper/BugReport"
-    }
-  ]
+    "BondsIndia Developer <developer@bondsindia.com> (https://github.com/bondsindiadeveloper/BugReport)"
+  ],
+  "description": "```bash\r npm install --save report-bugs\r ```\r ## Import the report-bugs Library.",
+  "bugs": {
+    "url": "https://github.com/bondsindiadeveloper/BugReport/issues"
+  },
+  "homepage": "https://github.com/bondsindiadeveloper/BugReport#readme"
 }
