@@ -5,7 +5,7 @@ import Modals from "./Modal";
 import TextArea from "./TextArea";
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Spinner from './Spinner';
 class BugReport extends Component {
   constructor(props) {
     super(props);
@@ -14,15 +14,16 @@ class BugReport extends Component {
       screenshot: "",
       desc: "",
       isLoading: false,
-      insertedId: ""
+      insertedId: "",
     };
   }
 
   captureScreenShot = async () => {
+    this.setState({isLoading:true, modal: true});
     const canvas = await html2canvas(document.querySelector("body"));
     const base64 = canvas.toDataURL("image/jpeg");
     console.log(base64)
-    this.setState({ screenshot: base64, modal: true });
+    this.setState({ screenshot: base64, modal: true, isLoading: false });
   };
 
   handleChange = (e) => {
@@ -37,8 +38,8 @@ class BugReport extends Component {
       insertedId: false,
       isLoading: false
     });
-
   handleSubmit = async (e) => {
+    this.setState({ isLoading: true });
     console.log("handlesubmit")
     e.preventDefault();
     try {
@@ -74,6 +75,13 @@ class BugReport extends Component {
         >
           <BugIcon  style = {{color : `${this.props.color}`}} />
         </button>
+        {isLoading ?         <Modals open={modal} onCloseClicked={this.toggle} onBackDropClicked={this.toggle}>
+        <div className="mt-5 pt-3 pb-3 mb-5">
+                                      <Spinner
+                                        text={"Loading..."}
+                                      />
+                                  </div>
+          </Modals>:
         <Modals open={modal} onCloseClicked={this.toggle} onBackDropClicked={this.toggle}>
           {insertedId ? (
             <div>
@@ -133,7 +141,7 @@ class BugReport extends Component {
               </div>
             </form>
           )}
-        </Modals>
+        </Modals>}
       </div>
     );
   }

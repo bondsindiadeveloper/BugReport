@@ -150,3 +150,7 @@
   transform: translateY(-500px) !important;
   transition: transform 300ms ease-in !important;
 }
+
+.textArea{
+  width : 500px !important;
+}

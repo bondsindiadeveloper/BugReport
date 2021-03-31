@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import AttachmentIcon from "mdi-react/AttachmentIcon";
 import { v4 as uuid } from "uuid";
-
+import './Modal.css';
 
 function expandTextarea(event) {
   event.target.style.overflow = "hidden";
@@ -27,7 +27,7 @@ export default (props) => {
     if (!doNotAutoResize) {
       textAreaRef.current.style.overflow = "hidden";
       textAreaRef.current.style.height = 0;
-      textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 8 + "px";
+      textAreaRef.current.style.height = textAreaRef.current.scrollWidth + 8 + "px";
     }
   }, []);
   const fileId = uuid();
@@ -42,12 +42,13 @@ export default (props) => {
           </div>
         )}
         <br />
-        <div className="form__form-group-input-wrap">
+        <div className="form__form-group-input-wrap" style={{width : '100%'}}>
           <textarea
             onKeyUp={doNotAutoResize ? () => {} : expandTextarea}
             ref={textAreaRef}
             value={value}
-            cols = "90"
+            className="textArea"
+            cols= {window.innerWidth/10 > 90 ? 90 : window.innerWidth/10}
             {...rest}
           ></textarea>
           {err && <span className="form__form-group-error">{err}</span>}
