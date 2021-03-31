@@ -109,7 +109,7 @@ class BugReport extends Component {
                 height="380px"
                 className="rounded"
               />
-              <div className = "mt-5"/>
+              <div className = "mt-5 pt-3 pb-3 mb-5">
               <TextArea
                 doNotAutoResize
                 name="Description"
@@ -121,6 +121,7 @@ class BugReport extends Component {
                 value={desc}
                 onChange={this.handleChange}
               />
+              </div>
               <div className="d-flex w-100 justify-content-center">
                 <button
                   type="reset"

@@ -42,15 +42,16 @@ export default (props) => {
           </div>
         )}
         <br />
-        <div className="form__form-group-input-wrap" style={{width : '100%'}}>
+        <div className="form__form-group-input-wrap">
           <textarea
             onKeyUp={doNotAutoResize ? () => {} : expandTextarea}
             ref={textAreaRef}
             value={value}
             className="textArea"
-            cols= {window.innerWidth/10 > 90 ? 90 : window.innerWidth/10}
             {...rest}
+            cols= {window.innerWidth/10 > 80 ? 80 : window.innerWidth/10}
           ></textarea>
+          {console.log(window.innerWidth)}
           {err && <span className="form__form-group-error">{err}</span>}
         </div>
         {onFileChange && (

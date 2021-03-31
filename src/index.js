@@ -7,7 +7,7 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-      <BugReport user = "bondsindia" app_id = "test" color = "brown" reportLink = "" />
+      <BugReport user = "bondsindia" app_id = "test" color = "brown" reportLink = "https://7i3xowbtma.execute-api.ap-south-1.amazonaws.com/uat/adminbugreport" />
       <header className="App-header">
         <img style = {{marginLeft : '50vw'}} src={logo} className="App-logo" alt="logo" />
         <p>
