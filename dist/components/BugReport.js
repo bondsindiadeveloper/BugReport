@@ -12,6 +12,7 @@ import Modals from "./Modal";
 import TextArea from "./TextArea";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Spinner from './Spinner';
 
 var BugReport = /*#__PURE__*/function (_Component) {
   _inherits(BugReport, _Component);
@@ -28,20 +29,26 @@ var BugReport = /*#__PURE__*/function (_Component) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              _this.setState({
+                isLoading: true,
+                modal: true
+              });
+
+              _context.next = 3;
               return html2canvas(document.querySelector("body"));
 
-            case 2:
+            case 3:
               canvas = _context.sent;
               base64 = canvas.toDataURL("image/jpeg");
               console.log(base64);
 
               _this.setState({
                 screenshot: base64,
-                modal: true
+                modal: true,
+                isLoading: false
               });
 
-            case 6:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -73,9 +80,13 @@ var BugReport = /*#__PURE__*/function (_Component) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                _this.setState({
+                  isLoading: true
+                });
+
                 console.log("handlesubmit");
                 e.preventDefault();
-                _context2.prev = 2;
+                _context2.prev = 3;
                 entity_id = _this.props.user;
                 app_id = _this.props.app_id;
                 _this$state = _this.state, desc = _this$state.desc, screenshot = _this$state.screenshot;
@@ -93,37 +104,38 @@ var BugReport = /*#__PURE__*/function (_Component) {
                   isLoading: true
                 });
 
-                _context2.next = 12;
+                _context2.next = 13;
                 return axios.post(_this.props.reportLink, body);
 
-              case 12:
+              case 13:
                 res = _context2.sent;
                 console.log("bug report", res);
-                insertedId = res.data.body;
+                console.log("bug report id", res.data);
+                insertedId = res.data;
 
                 _this.setState({
                   isLoading: false,
                   insertedId: insertedId
                 });
 
-                _context2.next = 22;
+                _context2.next = 24;
                 break;
 
-              case 18:
-                _context2.prev = 18;
-                _context2.t0 = _context2["catch"](2);
+              case 20:
+                _context2.prev = 20;
+                _context2.t0 = _context2["catch"](3);
                 console.log(_context2.t0);
 
                 _this.setState({
                   isLoading: false
                 });
 
-              case 22:
+              case 24:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[2, 18]]);
+        }, _callee2, null, [[3, 20]]);
       }));
 
       return function (_x) {
@@ -162,7 +174,15 @@ var BugReport = /*#__PURE__*/function (_Component) {
         style: {
           color: "".concat(this.props.color)
         }
-      })), /*#__PURE__*/React.createElement(Modals, {
+      })), isLoading ? /*#__PURE__*/React.createElement(Modals, {
+        open: modal,
+        onCloseClicked: this.toggle,
+        onBackDropClicked: this.toggle
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "mt-5 pt-3 pb-3 mb-5"
+      }, /*#__PURE__*/React.createElement(Spinner, {
+        text: "Loading..."
+      }))) : /*#__PURE__*/React.createElement(Modals, {
         open: modal,
         onCloseClicked: this.toggle,
         onBackDropClicked: this.toggle
@@ -189,8 +209,8 @@ var BugReport = /*#__PURE__*/function (_Component) {
         height: "380px",
         className: "rounded"
       }), /*#__PURE__*/React.createElement("div", {
-        className: "mt-5"
-      }), /*#__PURE__*/React.createElement(TextArea, {
+        className: "mt-5 pt-3 pb-3 mb-5"
+      }, /*#__PURE__*/React.createElement(TextArea, {
         doNotAutoResize: true,
         name: "Description",
         rows: "3",
@@ -200,7 +220,7 @@ var BugReport = /*#__PURE__*/function (_Component) {
         label: "Description",
         value: desc,
         onChange: this.handleChange
-      }), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React.createElement("div", {
         className: "d-flex w-100 justify-content-center"
       }, /*#__PURE__*/React.createElement("button", {
         type: "reset",

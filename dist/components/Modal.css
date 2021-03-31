@@ -68,6 +68,8 @@
 .form__form-group {
   display: flex !important;
   flex-wrap: wrap !important;
+  width: 100% !important;
+  /* background-color: red; */
 }
 .form__form-group-input-wrap {
   width: 100% !important;
@@ -104,7 +106,7 @@
   background-color: transparent !important;
   border : none !important;
   font-size: 30px !important;
-  padding : 10px !important;
+  padding : 0px !important;
 }
 .bug-icon :hover {
   background-color: lightgray !important;
@@ -147,4 +149,10 @@
 .modal-leave.modal-leave-active .modal{
   transform: translateY(-500px) !important;
   transition: transform 300ms ease-in !important;
+}
+
+.textArea{
+  /* width : 100% !important;   */
+  resize: horizontal;
+  overflow: auto;
 }

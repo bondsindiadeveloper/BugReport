@@ -2,6 +2,7 @@ import _objectWithoutProperties from "@babel/runtime/helpers/esm/objectWithoutPr
 import React, { useEffect, useRef } from "react";
 import AttachmentIcon from "mdi-react/AttachmentIcon";
 import { v4 as uuid } from "uuid";
+import './Modal.css';
 
 function expandTextarea(event) {
   event.target.style.overflow = "hidden";
@@ -25,7 +26,7 @@ export default (function (props) {
     if (!doNotAutoResize) {
       textAreaRef.current.style.overflow = "hidden";
       textAreaRef.current.style.height = 0;
-      textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 8 + "px";
+      textAreaRef.current.style.height = textAreaRef.current.scrollWidth + 8 + "px";
     }
   }, []);
   var fileId = uuid();
@@ -46,8 +47,10 @@ export default (function (props) {
     onKeyUp: doNotAutoResize ? function () {} : expandTextarea,
     ref: textAreaRef,
     value: value,
-    cols: "90"
-  }, rest)), err && /*#__PURE__*/React.createElement("span", {
+    className: "textArea"
+  }, rest, {
+    cols: window.innerWidth / 10 > 80 ? 80 : window.innerWidth / 10
+  })), console.log(window.innerWidth), err && /*#__PURE__*/React.createElement("span", {
     className: "form__form-group-error"
   }, err)), onFileChange && /*#__PURE__*/React.createElement("div", {
     className: "form__form-group-file h-100"
