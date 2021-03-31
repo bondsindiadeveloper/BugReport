@@ -69,7 +69,7 @@
   display: flex !important;
   flex-wrap: wrap !important;
   width: 100% !important;
-  background-color: red;
+  /* background-color: red; */
 }
 .form__form-group-input-wrap {
   width: 100% !important;
