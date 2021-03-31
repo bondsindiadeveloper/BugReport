@@ -106,7 +106,7 @@
   background-color: transparent !important;
   border : none !important;
   font-size: 30px !important;
-  padding : 10px !important;
+  padding : 0px !important;
 }
 .bug-icon :hover {
   background-color: lightgray !important;
