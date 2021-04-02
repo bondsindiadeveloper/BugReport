@@ -6,6 +6,7 @@ import TextArea from "./TextArea";
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './Spinner';
+import Bugimgicon from "./bugicon.png" 
 class BugReport extends Component {
   constructor(props) {
     super(props);
@@ -68,12 +69,25 @@ class BugReport extends Component {
       <div>
         <button
           className="bug-icon"
-          style = {{color : `${this.props.color}`}}
+          style = {this.props.backgroundstyle}
           type="button"
           title="Report a bug"
           onClick={this.captureScreenShot}
         >
-          <BugIcon  style = {{color : `${this.props.color}`}} />
+          <table>
+            <tr>
+              <td>
+                <img src={Bugimgicon} style ={this.props.imgstyle}  />
+              </td>
+              <td>
+                {this.props.displayText}
+              </td>
+            </tr>
+
+
+          </table>
+          
+          {/* <img src={Bugimgicon} style = {{color : `${this.props.color}`, width : `${this.props.width}` , height : `${this.props.height}` ,verticalAlign:"middle"}} /><span style={{verticalAlign:"middle"}}>Report a Bug</span> */}
         </button>
         {isLoading ?         <Modals open={modal} onCloseClicked={this.toggle} onBackDropClicked={this.toggle}>
         <div className="mt-5 pt-3 pb-3 mb-5">
