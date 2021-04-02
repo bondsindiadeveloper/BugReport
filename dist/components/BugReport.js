@@ -13,6 +13,7 @@ import TextArea from "./TextArea";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './Spinner';
+import Bugimgicon from "./bugicon.png";
 
 var BugReport = /*#__PURE__*/function (_Component) {
   _inherits(BugReport, _Component);
@@ -164,17 +165,14 @@ var BugReport = /*#__PURE__*/function (_Component) {
           insertedId = _this$state2.insertedId;
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
         className: "bug-icon",
-        style: {
-          color: "".concat(this.props.color)
-        },
+        style: this.props.backgroundstyle,
         type: "button",
         title: "Report a bug",
         onClick: this.captureScreenShot
-      }, /*#__PURE__*/React.createElement(BugIcon, {
-        style: {
-          color: "".concat(this.props.color)
-        }
-      })), isLoading ? /*#__PURE__*/React.createElement(Modals, {
+      }, /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("img", {
+        src: Bugimgicon,
+        style: this.props.imgstyle
+      })), /*#__PURE__*/React.createElement("td", null, this.props.displayText)))), isLoading ? /*#__PURE__*/React.createElement(Modals, {
         open: modal,
         onCloseClicked: this.toggle,
         onBackDropClicked: this.toggle
