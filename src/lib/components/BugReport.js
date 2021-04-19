@@ -43,6 +43,9 @@ class BugReport extends Component {
     this.setState({ isLoading: true });
     console.log("handlesubmit")
     e.preventDefault();
+    const headers = {
+      "Authorization": this.props.headerAuthParam || ""
+    }
     try {
       const entity_id = this.props.user   
       const app_id = this.props.app_id
@@ -51,7 +54,7 @@ class BugReport extends Component {
       const body = { page_id, entity_id, app_id, desc, screenshot };
       console.log("body report",body)
       this.setState({ isLoading: true });
-      const res = await axios.post(this.props.reportLink, body);
+      const res = await axios.post(this.props.reportLink, body, { headers });
       console.log("bug report",res)
       console.log("bug report id",res.data)
       const insertedId = res.data
