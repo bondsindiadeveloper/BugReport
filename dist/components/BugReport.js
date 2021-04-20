@@ -75,7 +75,7 @@ var BugReport = /*#__PURE__*/function (_Component) {
 
     _this.handleSubmit = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2(e) {
-        var entity_id, app_id, _this$state, desc, screenshot, page_id, body, res, insertedId;
+        var headers, entity_id, app_id, _this$state, desc, screenshot, page_id, body, res, insertedId;
 
         return _regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
@@ -87,7 +87,10 @@ var BugReport = /*#__PURE__*/function (_Component) {
 
                 console.log("handlesubmit");
                 e.preventDefault();
-                _context2.prev = 3;
+                headers = {
+                  "Authorization": _this.props.headerAuthParam || ""
+                };
+                _context2.prev = 4;
                 entity_id = _this.props.user;
                 app_id = _this.props.app_id;
                 _this$state = _this.state, desc = _this$state.desc, screenshot = _this$state.screenshot;
@@ -105,10 +108,12 @@ var BugReport = /*#__PURE__*/function (_Component) {
                   isLoading: true
                 });
 
-                _context2.next = 13;
-                return axios.post(_this.props.reportLink, body);
+                _context2.next = 14;
+                return axios.post(_this.props.reportLink, body, {
+                  headers: headers
+                });
 
-              case 13:
+              case 14:
                 res = _context2.sent;
                 console.log("bug report", res);
                 console.log("bug report id", res.data);
@@ -119,24 +124,24 @@ var BugReport = /*#__PURE__*/function (_Component) {
                   insertedId: insertedId
                 });
 
-                _context2.next = 24;
+                _context2.next = 25;
                 break;
 
-              case 20:
-                _context2.prev = 20;
-                _context2.t0 = _context2["catch"](3);
+              case 21:
+                _context2.prev = 21;
+                _context2.t0 = _context2["catch"](4);
                 console.log(_context2.t0);
 
                 _this.setState({
                   isLoading: false
                 });
 
-              case 24:
+              case 25:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[3, 20]]);
+        }, _callee2, null, [[4, 21]]);
       }));
 
       return function (_x) {

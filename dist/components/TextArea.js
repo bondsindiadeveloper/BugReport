@@ -49,7 +49,7 @@ export default (function (props) {
     value: value,
     className: "textArea"
   }, rest, {
-    cols: window.innerWidth / 10 > 80 ? 80 : window.innerWidth / 10
+    cols: window.innerWidth / 20
   })), console.log(window.innerWidth), err && /*#__PURE__*/React.createElement("span", {
     className: "form__form-group-error"
   }, err)), onFileChange && /*#__PURE__*/React.createElement("div", {
