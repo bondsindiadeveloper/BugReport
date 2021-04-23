@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import BugIcon from "mdi-react/BugIcon";
 import html2canvas from "html2canvas";
 import Modals from "./Modal";
-import TextArea from "./TextArea";
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './Spinner';
@@ -28,6 +27,7 @@ class BugReport extends Component {
   };
 
   handleChange = (e) => {
+    console.log(e.target.value)
     this.setState({ desc: e.target.value });
   };
 
@@ -126,18 +126,17 @@ class BugReport extends Component {
                 height="380px"
                 className="rounded"
               />
-              <div className = "mt-5 pt-3 pb-3 mb-5">
-              <TextArea
-                doNotAutoResize
-                name="Description"
-                rows="3"
-                className="rounded"
-                placeholder="Describe your issue"
-                autoFocus
-                label="Description"
-                value={desc}
-                onChange={this.handleChange}
-              />
+              <div className="form-group">
+                  <label htmlFor="exampleFormControlTextarea1">
+                  Description
+                  </label>
+                  <textarea
+                  className="form-control"
+                  placeholder="Describe your issue"
+                  onChange={(e) => this.handleChange(e)}
+                  autoFocus
+                  rows="4"
+                  />
               </div>
               <div className="d-flex w-100 justify-content-center">
                 <button
