@@ -9,7 +9,6 @@ import React, { Component } from "react";
 import BugIcon from "mdi-react/BugIcon";
 import html2canvas from "html2canvas";
 import Modals from "./Modal";
-import TextArea from "./TextArea";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './Spinner';
@@ -58,6 +57,8 @@ var BugReport = /*#__PURE__*/function (_Component) {
     }));
 
     _this.handleChange = function (e) {
+      console.log(e.target.value);
+
       _this.setState({
         desc: e.target.value
       });
@@ -162,6 +163,8 @@ var BugReport = /*#__PURE__*/function (_Component) {
   _createClass(BugReport, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$state2 = this.state,
           modal = _this$state2.modal,
           screenshot = _this$state2.screenshot,
@@ -212,17 +215,17 @@ var BugReport = /*#__PURE__*/function (_Component) {
         height: "380px",
         className: "rounded"
       }), /*#__PURE__*/React.createElement("div", {
-        className: "mt-5 pt-3 pb-3 mb-5"
-      }, /*#__PURE__*/React.createElement(TextArea, {
-        doNotAutoResize: true,
-        name: "Description",
-        rows: "3",
-        className: "rounded",
+        className: "form-group"
+      }, /*#__PURE__*/React.createElement("label", {
+        htmlFor: "exampleFormControlTextarea1"
+      }, "Description"), /*#__PURE__*/React.createElement("textarea", {
+        className: "form-control",
         placeholder: "Describe your issue",
+        onChange: function onChange(e) {
+          return _this2.handleChange(e);
+        },
         autoFocus: true,
-        label: "Description",
-        value: desc,
-        onChange: this.handleChange
+        rows: "4"
       })), /*#__PURE__*/React.createElement("div", {
         className: "d-flex w-100 justify-content-center"
       }, /*#__PURE__*/React.createElement("button", {
