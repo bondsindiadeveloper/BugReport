@@ -12,7 +12,7 @@ import Modals from "./Modal";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './Spinner';
-import Bugimgicon from "./bugicon.png";
+import Bugimgicon from "./bugicon.svg";
 
 var BugReport = /*#__PURE__*/function (_Component) {
   _inherits(BugReport, _Component);
@@ -177,10 +177,16 @@ var BugReport = /*#__PURE__*/function (_Component) {
         type: "button",
         title: "Report a bug",
         onClick: this.captureScreenShot
-      }, /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("img", {
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "customtooltip"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "tooltip-text"
+      }, "Report a Bug")), /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+        className: "mt-2"
+      }, /*#__PURE__*/React.createElement("img", {
         src: Bugimgicon,
         style: this.props.imgstyle
-      })), /*#__PURE__*/React.createElement("td", null, this.props.displayText)))), isLoading ? /*#__PURE__*/React.createElement(Modals, {
+      }))))), isLoading ? /*#__PURE__*/React.createElement(Modals, {
         open: modal,
         onCloseClicked: this.toggle,
         onBackDropClicked: this.toggle
