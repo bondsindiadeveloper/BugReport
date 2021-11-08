@@ -1,6 +1,6 @@
 {
   "name": "report-bugs",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "author": "BondsIndia Developer <developer@bondsindia.com>",
   "license": "MIT",
   "main": "dist/index.js",
