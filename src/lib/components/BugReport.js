@@ -74,7 +74,6 @@ class BugReport extends Component {
           className="bug-icon"
           style = {this.props.backgroundstyle}
           type="button"
-          title="Report a bug"
           onClick={this.captureScreenShot}
         >
           <div className="customtooltip" >
