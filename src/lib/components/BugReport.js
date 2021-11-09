@@ -20,7 +20,10 @@ class BugReport extends Component {
 
   captureScreenShot = async () => {
     this.setState({isLoading:true, modal: true});
-    const canvas = await html2canvas(document.querySelector("body"));
+    // debugger
+    console.log("Client Height ==> ",document.querySelector("body").clientHeight);
+    console.log("Client Width ==> ",document.querySelector("body").clientWidth);
+    const canvas = await html2canvas(document.querySelector("body"),{scrollX: -window.scrollX,scrollY: -window.scrollY,width:1920,height:500});
     const base64 = canvas.toDataURL("image/jpeg");
     console.log(base64)
     this.setState({ screenshot: base64, modal: true, isLoading: false });
@@ -75,6 +78,7 @@ class BugReport extends Component {
           style = {this.props.backgroundstyle}
           type="button"
           onClick={this.captureScreenShot}
+          accessKey="b"
         >
           <div className="customtooltip" >
             <p className="tooltip-text">Report a Bug</p>

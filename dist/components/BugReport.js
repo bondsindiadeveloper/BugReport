@@ -175,7 +175,6 @@ var BugReport = /*#__PURE__*/function (_Component) {
         className: "bug-icon",
         style: this.props.backgroundstyle,
         type: "button",
-        title: "Report a bug",
         onClick: this.captureScreenShot
       }, /*#__PURE__*/React.createElement("div", {
         className: "customtooltip"
