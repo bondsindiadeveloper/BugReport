@@ -32,12 +32,20 @@ var BugReport = /*#__PURE__*/function (_Component) {
               _this.setState({
                 isLoading: true,
                 modal: true
+              }); // debugger
+
+
+              console.log("Client Height ==> ", document.querySelector("body").clientHeight);
+              console.log("Client Width ==> ", document.querySelector("body").clientWidth);
+              _context.next = 5;
+              return html2canvas(document.querySelector("body"), {
+                scrollX: -window.scrollX,
+                scrollY: -window.scrollY,
+                width: window.innerWidth,
+                height: window.innerHeight
               });
 
-              _context.next = 3;
-              return html2canvas(document.querySelector("body"));
-
-            case 3:
+            case 5:
               canvas = _context.sent;
               base64 = canvas.toDataURL("image/jpeg");
               console.log(base64);
@@ -48,7 +56,7 @@ var BugReport = /*#__PURE__*/function (_Component) {
                 isLoading: false
               });
 
-            case 7:
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -175,7 +183,8 @@ var BugReport = /*#__PURE__*/function (_Component) {
         className: "bug-icon",
         style: this.props.backgroundstyle,
         type: "button",
-        onClick: this.captureScreenShot
+        onClick: this.captureScreenShot,
+        accessKey: "b"
       }, /*#__PURE__*/React.createElement("div", {
         className: "customtooltip"
       }, /*#__PURE__*/React.createElement("p", {
