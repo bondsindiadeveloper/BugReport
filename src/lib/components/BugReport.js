@@ -23,7 +23,7 @@ class BugReport extends Component {
     // debugger
     console.log("Client Height ==> ",document.querySelector("body").clientHeight);
     console.log("Client Width ==> ",document.querySelector("body").clientWidth);
-    const canvas = await html2canvas(document.querySelector("body"),{scrollX: -window.scrollX,scrollY: -window.scrollY,width:1920,height:500});
+    const canvas = await html2canvas(document.querySelector("body"),{scrollX: -window.scrollX,scrollY: -window.scrollY,width:window.innerWidth,height:window.innerHeight});
     const base64 = canvas.toDataURL("image/jpeg");
     console.log(base64)
     this.setState({ screenshot: base64, modal: true, isLoading: false });
