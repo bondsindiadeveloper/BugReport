@@ -3,7 +3,6 @@ import BugIcon from "mdi-react/BugIcon";
 import html2canvas from "html2canvas";
 import Modals from "./Modal";
 import axios from 'axios'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './Spinner';
 import Bugimgicon from "./bugicon.svg" 
 class BugReport extends Component {
