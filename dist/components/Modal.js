@@ -1,9 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import BugIcon from "mdi-react/BugIcon";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Modal.css';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import './Modal.scss';
 
 var Modals = function Modals(props) {
   return /*#__PURE__*/React.createElement(Modal, {
