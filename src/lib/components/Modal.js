@@ -1,10 +1,8 @@
 import React from 'react';
 import {Modal, Button } from 'react-bootstrap'
 import BugIcon from "mdi-react/BugIcon";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Modal.css'
+import './Modal.scss'
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const Modals = (props) => {
   return (
     <Modal show={props.open} onHide={props.onCloseClicked} size="lg">
