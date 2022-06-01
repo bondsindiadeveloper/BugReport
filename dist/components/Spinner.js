@@ -3,8 +3,7 @@ import _createClass from "@babel/runtime/helpers/esm/createClass";
 import _possibleConstructorReturn from "@babel/runtime/helpers/esm/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
-import React from 'react';
-import './Spinner.scss';
+import React from 'react'; // import './Spinner.scss';
 
 var Spinner = /*#__PURE__*/function (_React$Component) {
   _inherits(Spinner, _React$Component);
