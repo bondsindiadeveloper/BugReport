@@ -4,7 +4,7 @@ import _possibleConstructorReturn from "@babel/runtime/helpers/esm/possibleConst
 import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
 import React from 'react';
-import './Spinner.css';
+import './Spinner.scss';
 
 var Spinner = /*#__PURE__*/function (_React$Component) {
   _inherits(Spinner, _React$Component);
