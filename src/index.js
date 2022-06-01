@@ -3,6 +3,8 @@ import { render } from "react-dom";
 import BugReport from './lib/index'
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './lib/components/Spinner.scss';
+import './lib/components/Modal.scss';
 import './App.css';
 class App extends Component {
   render(){

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal, Button } from 'react-bootstrap'
 import BugIcon from "mdi-react/BugIcon";
-import './Modal.scss'
+// import './Modal.scss'
 
 const Modals = (props) => {
   return (
